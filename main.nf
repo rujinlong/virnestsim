@@ -19,8 +19,7 @@ process CAMISIM {
 
     script:
     """
-    ls -al /usr/local/bin
-    /usr/local/bin/mategenomesimulation.py $camisimcfg
+    metagenomesimulation.py $camisimcfg
     """
 }
 
