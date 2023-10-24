@@ -19,7 +19,8 @@ process CAMISIM {
 
     script:
     """
-    mategenomesimulation.py $camisimcfg
+    ls -al /usr/local/bin
+    /usr/local/bin/mategenomesimulation.py $camisimcfg
     """
 }
 
