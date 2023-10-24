@@ -15,6 +15,7 @@ process CAMISIM {
     path camisimcfg
     path camisimmeta
     path camisimtsv
+    path refseqs
 
     output:
     path "output.txt"
@@ -31,7 +32,8 @@ workflow {
     camisimcfg_ch = Channel.fromPath(params.camisimcfg)
     camisimmeta_ch = Channel.fromPath(params.camisimmeta)
     camisimtsv_ch = Channel.fromPath(params.camisimtsv)
-    CAMISIM(camisimcfg_ch, camisimmeta_ch, camisimtsv_ch)
+    refseqs_ch = Channel.fromPath(params.refseqs)
+    CAMISIM(camisimcfg_ch, camisimmeta_ch, camisimtsv_ch, refseqs_ch)
 }
 
 workflow.onComplete {
