@@ -1,4 +1,4 @@
-genome_ID	OTU	NCBI_ID	Novelty_category
+genome_ID	OTU	NCBI_ID	novelty_category
 GCA_000836965.1	836965	2681618	Complete Genome
 GCA_000837025.1	837025	10658	Complete Genome
 GCA_000837225.1	837225	2681603	Complete Genome
