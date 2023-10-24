@@ -11,7 +11,6 @@ report: ${params.report}
 """
 
 process CAMISIM {
-
     input:
     path camisimcfg
 
