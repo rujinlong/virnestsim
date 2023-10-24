@@ -27,6 +27,7 @@ process CAMISIM {
 workflow {
     // Contigs from Lab isolation and/or NCBI genomes
     camisimcfg_ch = Channel.fromPath(params.camisimcfg)
+    CAMISIM(camisimcfg_ch)
 }
 
 workflow.onComplete {
