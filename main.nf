@@ -13,6 +13,8 @@ report: ${params.report}
 process CAMISIM {
     input:
     path camisimcfg
+    path camisimmeta
+    path camisimtsv
 
     output:
     path "output.txt"
@@ -27,7 +29,9 @@ process CAMISIM {
 workflow {
     // Contigs from Lab isolation and/or NCBI genomes
     camisimcfg_ch = Channel.fromPath(params.camisimcfg)
-    CAMISIM(camisimcfg_ch)
+    camisimmeta_ch = Channel.fromPath(params.camisimmeta)
+    camisimtsv_ch = Channel.fromPath(params.camisimtsv)
+    CAMISIM(camisimcfg_ch, camisimmeta_ch, camisimtsv_ch)
 }
 
 workflow.onComplete {
