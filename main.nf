@@ -18,11 +18,12 @@ process CAMISIM {
     path refseqs
 
     output:
-    path "output.txt"
 
+    path "output.txt"
     script:
     """
     metagenomesimulation.py $camisimcfg
+    echo "succeed" > output.txt
     """
 }
 
