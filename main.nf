@@ -16,10 +16,11 @@ process CAMISIM {
     path camisimmeta
     path camisimtsv
     path refseqs
+    path ncbi
 
     output:
-
     path "output.txt"
+
     script:
     """
     metagenomesimulation.py $camisimcfg
@@ -34,7 +35,8 @@ workflow {
     camisimmeta_ch = Channel.fromPath(params.camisimmeta)
     camisimtsv_ch = Channel.fromPath(params.camisimtsv)
     refseqs_ch = Channel.fromPath(params.refseqs)
-    CAMISIM(camisimcfg_ch, camisimmeta_ch, camisimtsv_ch, refseqs_ch)
+    ncbi_ch = Channel.fromPath(params.ncbi)
+    CAMISIM(camisimcfg_ch, camisimmeta_ch, camisimtsv_ch, refseqs_ch, ncbi_ch)
 }
 
 workflow.onComplete {
